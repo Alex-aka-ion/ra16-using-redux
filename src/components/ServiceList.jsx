@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {editService, removeService, resetFields} from "../actions/actionCreators";
 
 export default function ServiceList() {
+    const filter = useSelector(state => state.serviceFilter);
     const items = useSelector(state => state.serviceList);
     const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ export default function ServiceList() {
 
     return (
         <ul>
-            {items.map(o => <li key={o.id}>
+            {items.filter(o => o.name.toLowerCase().includes(filter.toLowerCase())).map(o => <li key={o.id}>
                 {o.name} {o.price}
                 <button onClick={() => handleEdit(o.id, o.name, o.price)}>Edit</button>
                 <button onClick={() => handleRemove(o.id)}>X</button>

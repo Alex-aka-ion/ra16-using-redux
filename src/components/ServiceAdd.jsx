@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addSaveService, changeServiceField, resetFields} from "../actions/actionCreators";
+import {addSaveService, changeServiceField, resetFields, resetFilter} from "../actions/actionCreators";
 
 export default function ServiceAdd() {
     const item = useSelector(state => state.serviceAdd);
@@ -15,6 +15,9 @@ export default function ServiceAdd() {
         e.preventDefault();
         dispatch(addSaveService(item.name, item.price, item.id));
         dispatch(resetFields());
+        if (!item.id) {
+            dispatch(resetFilter());
+        }
     }
 
     const handleCancel = e => {
