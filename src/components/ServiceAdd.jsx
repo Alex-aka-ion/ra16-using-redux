@@ -13,7 +13,7 @@ export default function ServiceAdd() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addSaveService(item.name, item.price, item.id));
+        dispatch(addSaveService(item));
         dispatch(resetFields());
         if (!item.id) {
             dispatch(resetFilter());

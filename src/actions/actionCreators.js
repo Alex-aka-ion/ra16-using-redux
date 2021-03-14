@@ -6,8 +6,8 @@ import {
     RESET_FIELDS, RESET_FILTER,
 } from "./actionTypes";
 
-export function addSaveService(name, price, id) {
-    return {type: ADD_SAVE_SERVICE, payload: {name, price, id}};
+export function addSaveService(item) {
+    return {type: ADD_SAVE_SERVICE, payload: item};
 }
 
 export function removeService(id) {
@@ -22,8 +22,8 @@ export function resetFields() {
     return {type: RESET_FIELDS};
 }
 
-export function editService(id, name, price) {
-    return {type: EDIT_SERVICE, payload: {id, name, price}};
+export function editService(item) {
+    return {type: EDIT_SERVICE, payload: item};
 }
 
 export function changeServiceFilter(value) {

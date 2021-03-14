@@ -1,4 +1,4 @@
-import {CHANGE_FILTER, RESET_FIELDS, RESET_FILTER} from "../actions/actionTypes";
+import {CHANGE_FILTER, RESET_FILTER} from "../actions/actionTypes";
 
 const initialState = '';
 

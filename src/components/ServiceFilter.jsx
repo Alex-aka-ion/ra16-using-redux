@@ -17,7 +17,7 @@ export default function ServiceFilter() {
 
     return (
         <form>
-            <label for={filter}>Filter:</label>
+            <label htmlFor={filter}>Filter:</label>
             <input name="filter" onChange={handleChange} value={filter}/>
             <button type='submit' onClick={handleClear}>Clear</button>
         </form>

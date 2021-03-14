@@ -13,15 +13,15 @@ export default function ServiceList() {
         dispatch(resetFields());
     };
 
-    const handleEdit = (id, name, price) => {
-        dispatch(editService(id, name, price));
+    const handleEdit = item => {
+        dispatch(editService(item));
     }
 
     return (
         <ul>
             {items.filter(o => o.name.toLowerCase().includes(filter.toLowerCase())).map(o => <li key={o.id}>
                 {o.name} {o.price}
-                <button onClick={() => handleEdit(o.id, o.name, o.price)}>Edit</button>
+                <button onClick={() => handleEdit(o)}>Edit</button>
                 <button onClick={() => handleRemove(o.id)}>X</button>
             </li>)}
         </ul>
